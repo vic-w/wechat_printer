@@ -31,4 +31,8 @@
    8. 输入用户名pi，密码raspberry
    9. 选择你的打印机
 10. 下载wechat-printer代码。
+   1. 安装git。sudo apt-get install git
+   2. 下载代码。git clone https://github.com/vic-w/wechat_printer.git
+   3. 运行代码。python wechat_printer/printer.py
+   4. 至此微信打印机终端配置完成。
 
