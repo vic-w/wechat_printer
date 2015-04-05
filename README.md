@@ -27,7 +27,7 @@
    4. 将打印机管理程序lpadmin的权限赋给用户pi。输入sudo usermod -a -G lpadmin pi
    5. 用浏览器访问RPi的631端口，打开打印机配置页面。此时只能用RPi自己的浏览器访问，因为它默认不接受外来的连接。如果想用PC访问需要修改/etc/cups/cupsd.conf文件。详见此链接http://www.howtogeek.com/169679/how-to-add-a-printer-to-your-raspberry-pi-or-other-linux-computer/
    6. 连接打印机到Raspberry Pi的USB口
-   7. 在administrator标签页点击add printer
+   7. 在administrator标签页点击add printer (这里开始网页反应比较慢，需耐心等待）
    8. 输入用户名pi，密码raspberry
    9. 选择你的打印机
 10. 下载wechat-printer代码。
