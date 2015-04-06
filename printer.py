@@ -50,7 +50,7 @@ while True:
 		img2.save('2.png')
 		
 		img3 = Image.open('bg.png')
-		img3.paste(img2.resize((560,560), Image.ANTIALIAS), (88,60,648,620))
+		img3.paste(img2.resize((560,560), Image.ANTIALIAS), (60,60,620,620))
 		img3.save('3.png')
 		
 		img4 = img3.crop((56,6,684,906))
@@ -61,7 +61,7 @@ while True:
 		screen.blit(image_s, (100,20))
 		pygame.display.update()
         
-		cmd = "lpr " + name
+		cmd = "lpr 3.png"
 		os.system(cmd)
 
 pygame.quit()
