@@ -29,8 +29,13 @@
    6. 连接打印机到Raspberry Pi的USB口
    7. 在administrator标签页点击add printer (这里开始网页反应比较慢，需耐心等待）
    8. 输入用户名pi，密码raspberry
-   9. 选择你的打印机
-10. 下载wechat-printer代码。
+   9. 选择你的打印机。由于我的打印机型号是HP Deskjet，         默认的list上没有这款机型，所以我还需要安装hplip的最新版本（HP打印机的开源驱动程序）。
+   10. 接下来设置打印机默认纸张大小为A6。（LOMO照片尺寸为A7，只有A6的一半大小，但打印机最小只能支持A6）
+10. （可选）安装hplip
+   1. 在http://hplipopensource.com/下载hplip的最新版安装包。我安装时最新版是3.15.2。需要说明的是Rasbian系统里已经自带了一个hplip，但不是最新版本，而且用apt-get upgrade升级后仍然不是最新版，所以需要从官网下载安装包。另外，下载时要选择tar格式的安装文件，不要下载sh后缀的那个，后者在RPi上编译时会死机。
+   2. 参照这篇文章进行安装：http://hplipopensource.com/hplip-web/install/manual/distros/debian.html
+   3. 安装完成后，就应该可以在驱动列表里找到HP Deskjet 1010了。
+11. 下载wechat-printer代码。
    1. 安装git。sudo apt-get install git
    2. 下载代码。git clone https://github.com/vic-w/wechat_printer.git
    3. 运行代码。python wechat_printer/printer.py
