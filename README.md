@@ -1,6 +1,20 @@
 微信lomo打印机
 ==============
 
+材料
+----
+1. 树莓派 Raspberry Pi 512M B型，214￥
+2. HP Deskjet 1010 printer （含墨盒），淘宝上最便宜的一款彩色喷墨打印机，174￥
+3. 8寸1024*768 液晶屏显示器套件HDMI+VGA+2AV，278￥
+4. 一条短hdmi线，5￥
+5. A7相纸100张，10￥
+6. 8cm散热风扇5V，10￥
+7. 电源插板，变压器，一个大纸箱，30￥
+
+总成本721￥。0_0算一算还是挺贵的啊。
+
+安装
+----
 1. 安装Win32DiskImager
 2. 下载RASPBIAN的image。http://www.raspberrypi.org/downloads/
 3. 使用Win32DiskImager将Raspbian的镜像灌入SD卡
