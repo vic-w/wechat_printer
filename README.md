@@ -31,7 +31,7 @@
    1. 打开控制台
    2. 更新apt-get。sudo apt-get update
    3. 安装vnc服务。sudo apt-get install tightvncserver
-   4. 输入vncserver :1，并设置密码
+   4. 输入vncserver :1，并设置密码(如果忘记了这个密码，可以用vncpasswd来重设。然后service vncserver restart重启服务）
    5. 使用ifconfig查看Raspberry Pi的ip地址
    6. 使用vnc viewer连接vnc://192.168.xxx.xxx:5901，并输入刚才设置的密码(为什么是5901？因为vnc默认端口是5900，刚才输入的vncserver :1表示端口号+1）
    7. 现在应该可以看到RPi的桌面了
