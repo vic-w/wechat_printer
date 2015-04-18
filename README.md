@@ -55,4 +55,27 @@
    2. 下载代码。git clone https://github.com/vic-w/wechat_printer.git
    3. 运行代码。python wechat_printer/printer.py
    4. 至此微信打印机终端配置完成。
-
+12. 设置开机启动
+   1. 启动vncserver
+      1. sudo vim /etc/init.d/tightvncserver
+      2. 输入<pre><code>
+       export USER='pi'
+       eval cd ~$USER
+       case "$1" in
+          start)
+             su $USER -c '/usr/bin/vncserver :1 -geometry 800x600'
+             echo 'Starting vncserver for $USER'
+             ;;
+          stop)
+             pkill Xtightvnc
+             echo 'Vncserver Stopped'
+             ;;
+          *)
+             echo "Usage: /etc/init.d/vncserver {start|stop}"
+             exit 1
+             ;;
+       esac
+       exit 0
+       </code></pre>
+      3. sudo chmod 755 /etc/init.d/tightvncserver
+      4. sudo update-rc.d tightvncserver defaults
