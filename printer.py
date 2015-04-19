@@ -49,19 +49,19 @@ while True:
 		img2 = img1.crop((left, top, right, bottom))
 		img2.save('2.png')
 		
-		img3 = Image.open('bg.png')
-		img3.paste(img2.resize((560,560), Image.ANTIALIAS), (60,60,620,620))
-		img3.save('3.png')
+		img_print = Image.open('bg.png')
+		img_print.paste(img2.resize((560,560), Image.ANTIALIAS), (60,60,620,620))
+		img_print.save('img_print.png')
 		
-		img4 = img3.crop((56,6,684,906))
-		img4.save('4.png')
+		img_display = img_print.crop((0,6,684,906))
+		img_display.save('img_display.png')
 		        
-		image = pygame.image.load('4.png').convert()
-		image_s = pygame.transform.scale(image, (628/2,900/2))
-		screen.blit(image_s, (100,20))
+		img_display = pygame.image.load('img_display.png').convert()
+		img_display_small = pygame.transform.scale(img_display, (450,500))
+		screen.blit(img_display_small, (400,50))
 		pygame.display.update()
         
-		cmd = "lpr 3.png"
+		cmd = "lpr img_print.png"
 		os.system(cmd)
 
 pygame.quit()
