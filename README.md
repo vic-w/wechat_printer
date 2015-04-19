@@ -79,3 +79,13 @@
        </code></pre>
       3. sudo chmod 755 /etc/init.d/tightvncserver
       4. sudo update-rc.d tightvncserver defaults
+   2. 启动printer.py
+      1. vim .profile
+      2. 在最后添加 <pre><code>
+       PYTHON_IS_RUNNING=`ps -e|grep 'python'|sed -e "/grep/d"`
+       if [ -z "$PYTHON_IS_RUNNING" ]; then
+          cd ~/wechat_printer
+          python printer.py
+       fi
+       </code></pre>
+      3. 此段代码在启动时运行，但会阻止进入X，我并未弄明白是为什么。
