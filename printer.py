@@ -21,7 +21,11 @@ while True:
 			break
 
 	url = "http://1.virtualshop.sinaapp.com/photo.php"
-	imageUrl = urllib2.urlopen(url).read()
+	try:
+		imageUrl = urllib2.urlopen(url).read()
+	except:
+		print 'Can not get image url'
+
 	time.sleep(1)
     
 	if(imageUrl != last_imageUrl):
@@ -36,7 +40,13 @@ while True:
 		#f.write(imageData)
 		#f.close()
 		
-		urllib.urlretrieve(imageUrl, 'img_web.jpg')
+		while 1:
+			try:
+				urllib.urlretrieve(imageUrl, 'img_web.jpg')
+			except:
+				print 'Can not get the image'
+			else:
+				break
 		print 'image downloaded'
 
 		img_web = Image.open('img_web.jpg')
