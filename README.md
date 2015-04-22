@@ -55,7 +55,8 @@
    2. 下载代码。git clone https://github.com/vic-w/wechat_printer.git
    3. 运行代码。python wechat_printer/printer.py
    4. 至此微信打印机终端配置完成。
-12. 设置开机启动
+12. 安装pyexiv2（可读取图像的EXIF信息，以便矫正图像的Orientation）: sudo apt-get install python-pyexiv2
+13. 设置开机启动
    1. 启动vncserver
       1. sudo vim /etc/init.d/tightvncserver
       2. 输入<pre><code>
@@ -81,11 +82,12 @@
       4. sudo update-rc.d tightvncserver defaults
    2. 启动printer.py
       1. vim .profile
-      2. 在最后添加 <pre><code>
+      2. 在最后添加 
+       <pre><code>
        PYTHON_IS_RUNNING=`ps -e|grep 'python'|sed -e "/grep/d"`
        if [ -z "$PYTHON_IS_RUNNING" ]; then
-          cd ~/wechat_printer
-          python printer.py
+           cd ~/wechat_printer
+           python printer.py
        fi
        </code></pre>
       3. 此段代码在启动时运行，但会阻止进入X，我并未弄明白是为什么。
