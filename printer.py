@@ -109,8 +109,8 @@ while True:
 		print 'Image going to be displayed'
 
 		img_display = pygame.image.load('img_display.png').convert()
-		img_display_small = pygame.transform.scale(img_display, (450,500))
-		screen.blit(img_display_small, (400,50))
+		img_display_small = pygame.transform.scale(img_display, (230,360))
+		screen.blit(img_display_small, (200,20))
 		pygame.display.update()
 	
 		print 'Image displayed'
